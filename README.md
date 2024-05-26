@@ -1,5 +1,9 @@
 # Create Netflix with ChatGpt
 
+- Step: 1
+    - Create React App 
+    - Configure Tailwind CSS
+
 - Features
     - Sign In & Sign Up
          - Sig In Form and Sign up form
