@@ -1,7 +1,7 @@
-# create netflix with chatGpt
+# Create Netflix with ChatGpt
 
 - Features
-    - Sign IN & Sign Up
+    - Sign In & Sign Up
          - Sig In Form and Sign up form
          - Redirect Browser page
     - Dashboard
@@ -10,7 +10,7 @@
             - Tailer in back-ground
             - Title and description of movie
             - Movies suggestion 
-                - movies lists 
+                - Movies lists 
     - Chat Gpt 
         - Search bar
         - Suggestion of the movie
