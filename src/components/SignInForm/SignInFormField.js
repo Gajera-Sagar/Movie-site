@@ -4,8 +4,9 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { Auth, dataBase } from "../Firebase/Firebase";
+import { Auth, dataBase } from "../Firebase/Firebase.js";
 import { doc, setDoc } from "firebase/firestore";
+
 function SignInFormField({ signin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

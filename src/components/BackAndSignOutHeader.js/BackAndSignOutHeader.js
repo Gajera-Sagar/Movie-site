@@ -1,6 +1,6 @@
 import { signOut } from "firebase/auth";
 import React from "react";
-import { Auth } from "../Firebase/Firebase";
+import { Auth } from "../Firebase/Firebase.js";
 import { Navigate } from "react-router-dom";
 
 function BackAndSignOutHeader({ trailer }) {

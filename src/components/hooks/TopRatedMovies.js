@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { Authentication, Movie_url } from '../utils/CenterData';
-import {TopRatedMovies} from '../StoreSlices/TopRatedMovies';
+import { Authentication, Movie_url } from '../utils/CenterData.js';
+import {TopRatedMovies} from '../StoreSlices/TopRatedMovies.js';
 
 function PopularMoviesData() {
   

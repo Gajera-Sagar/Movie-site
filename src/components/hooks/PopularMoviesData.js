@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { Authentication, Movie_url } from '../utils/CenterData';
-import { popularmovies } from '../StoreSlices/PopularMovies';
+import { Authentication, Movie_url } from '../utils/CenterData.js';
+import { popularmovies } from '../StoreSlices/PopularMovies.js';
 
 function PopularMoviesData() {
   
@@ -13,7 +13,7 @@ useEffect(() => {
     .then(response => response.json())
     .then(data => dispatch(popularmovies(data.results)))
    
-}, []);
+}, [dispatch]);
 }
 
 export default PopularMoviesData

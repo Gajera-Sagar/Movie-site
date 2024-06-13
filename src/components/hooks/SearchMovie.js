@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect } from "react";
-import { Authentication } from "../utils/CenterData";
+import { Authentication } from "../utils/CenterData.js";
 
 export default function SearchMovies(){
 

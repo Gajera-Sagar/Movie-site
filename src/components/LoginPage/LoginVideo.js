@@ -1,32 +1,6 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 
 export default function LoginVideo({ srcImg, srcVideo, loading }) {
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  // const togglePlay = () => {
-  //   if (videoRef.current.paused) {
-  //     videoRef.current.play();
-  //   } else {
-  //     videoRef.current.pause();
-  //   }
-  //   setIsPlaying((prevState) => !prevState);
-  // };
-
-  // const skip = (amount) => {
-  //   videoRef.current.currentTime += amount;
-  // };
-
-  // const download = () => {
-  //   const a = document.createElement("a");
-  //   a.href = videoSrc;
-  //   a.download = "video.mp4"; // customize filename if needed
-  //   document.body.appendChild(a);
-  //   a.click();
-  //   document.body.removeChild(a);
-  // };
-
-  // const videoSrc = "/videos/videoplayback.mp4"; // Replace with your video file path
 
   return (
     <>

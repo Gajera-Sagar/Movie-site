@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Authentication, Image_Path, Movie_url } from "../utils/CenterData";
-import BackAndSignOutHeader from "../BackAndSignOutHeader.js/BackAndSignOutHeader";
-import ShimmerEffectForMovieDetails from "../ShimmerEffect/ShimmerEffectForMovieDetails";
+import { Authentication, Image_Path, Movie_url } from "../utils/CenterData.js";
+import BackAndSignOutHeader from "../BackAndSignOutHeader.js/BackAndSignOutHeader.js";
+import ShimmerEffectForMovieDetails from "../ShimmerEffect/ShimmerEffectForMovieDetails.js";
 
 function MovieDetails() {
   const [trailer, setTrailer] = useState();
@@ -13,7 +13,7 @@ function MovieDetails() {
     fetch(Movie_url + movieID, Authentication)
       .then((response) => response.json())
       .then((data) => setMovieDetail(data));
-  }, []);
+  }, [movieID]);
 
   useEffect(() => {
     fetch(`${Movie_url}${movieID}/videos?language=en-US`, Authentication)

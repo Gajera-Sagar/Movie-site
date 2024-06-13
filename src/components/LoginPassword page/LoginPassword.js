@@ -1,5 +1,5 @@
 import React from 'react'
-import LoginHeader from '../LoginPage/LoginHeader'
+import LoginHeader from '../LoginPage/LoginHeader.js'
 
 function LoginPassword() {
   return (

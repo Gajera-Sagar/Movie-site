@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Questions } from "./../utils/Data";
+import { Questions } from "./../utils/Data.js";
 
 export default function FreelyAskedQue() {
   const [index, setIndex] = useState(null);

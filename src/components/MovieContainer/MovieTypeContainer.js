@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import MovieCard from "./MovieCard";
+import MovieCard from "./MovieCard.js";
 
 function MovieTypeContainer({ movies, title }) {
   const sliderRef = useRef(null);

@@ -4,21 +4,21 @@ import {
   RouterProvider,
   createBrowserRouter,
 } from "react-router-dom";
-import Login from "../LoginPage/Login";
-import SignInForm from "../SignInForm/SignInForm";
-import App from "../Dashboard/App";
-import MovieDetails from "../MovieDetails/MovieDetails";
-import LoginPassword from "../LoginPassword page/LoginPassword";
+import Login from "../LoginPage/Login.js";
+import SignInForm from "../SignInForm/SignInForm.js";
+import App from "../Dashboard/App.js";
+import MovieDetails from "../MovieDetails/MovieDetails.js";
+import LoginPassword from "../LoginPassword page/LoginPassword.js";
 import { onAuthStateChanged } from "firebase/auth";
-import { Auth } from "../Firebase/Firebase";
+import { Auth } from "../Firebase/Firebase.js";
 
 function Layout() {
-  const [user, setUser] = useState();
+  // const [user, setUser] = useState();
 
   let tocon = localStorage.getItem("accessTocon");
   useEffect(() => {
-    const unsuscribe = onAuthStateChanged(Auth, (user) => {
-      setUser(user);
+    const unsuscribe = onAuthStateChanged(Auth, () => {
+      // setUser(user);
     });
     return () => unsuscribe();
   }, []);

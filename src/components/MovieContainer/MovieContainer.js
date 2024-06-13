@@ -1,5 +1,5 @@
 import React from "react";
-import MovieTypeContainer from "./MovieTypeContainer";
+import MovieTypeContainer from "./MovieTypeContainer.js";
 import { useSelector } from "react-redux";
 
 export default function MovieContainer() {

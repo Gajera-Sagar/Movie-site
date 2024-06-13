@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { Authentication, Movie_url } from "../utils/CenterData";
-import MovieTrailet from "../MovieTailer/MovieTrailet";
+import { Authentication, Movie_url } from "../utils/CenterData.js";
+import MovieTrailet from "../MovieTailer/MovieTrailet.js";
 import { useDispatch } from "react-redux";
-import { NowPlayingMovie } from "../StoreSlices/NowPlayingMovies";
-import PopularMoviesData from "../hooks/PopularMoviesData";
-import MovieContainer from "../MovieContainer/MovieContainer";
-import TopRatedMovies from "../hooks/TopRatedMovies";
-import BackAndSignOutHeader from "../BackAndSignOutHeader.js/BackAndSignOutHeader";
-import DashboardShimmerEffect from "../ShimmerEffect/DashboardShimmerEffect";
-import UpcomingMovies from "../hooks/UpcomingMovies";
-import SearchMovies from "../hooks/SearchMovie";
+import { NowPlayingMovie } from "../StoreSlices/NowPlayingMovies.js";
+import PopularMoviesData from "../hooks/PopularMoviesData.js";
+import MovieContainer from "../MovieContainer/MovieContainer.js";
+import TopRatedMovies from "../hooks/TopRatedMovies.js";
+import BackAndSignOutHeader from "../BackAndSignOutHeader.js/BackAndSignOutHeader.js";
+import DashboardShimmerEffect from "../ShimmerEffect/DashboardShimmerEffect.js";
+import UpcomingMovies from "../hooks/UpcomingMovies.js";
+import SearchMovies from "../hooks/SearchMovie.js";
 
 function App() {
   const [nowPlaying, setNowPlaying] = useState(null);
@@ -25,7 +25,7 @@ function App() {
       })
 
       .catch((err) => console.error(err));
-  }, []);
+  }, [dispatch]);
 
   PopularMoviesData();
   TopRatedMovies();

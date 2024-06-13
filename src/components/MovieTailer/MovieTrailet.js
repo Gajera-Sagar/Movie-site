@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Authentication, Movie_url } from "../utils/CenterData";
+import { Authentication, Movie_url } from "../utils/CenterData.js";
 import { useSelector } from "react-redux";
 
 function MovieTrailet() {

@@ -1,10 +1,10 @@
-import LoginHeader from "./LoginHeader";
-import LoginInput from "./LoginInput";
-import LoginTopic from "./LoginTopic";
-import LoginVideo from "./LoginVideo";
-import LoginVideoAndContentVideo from "./LoginVideoAndContentVideo";
-import { GrayLine } from "../utils/CentralComponents";
-import FreelyAskedQue from "./FreelyAskedQue";
+import LoginHeader from "./LoginHeader.js";
+import LoginInput from "./LoginInput.js";
+import LoginTopic from "./LoginTopic.js";
+import LoginVideo from "./LoginVideo.js";
+import LoginVideoAndContentVideo from "./LoginVideoAndContentVideo.js";
+import { GrayLine } from "../utils/CentralComponents.js";
+import FreelyAskedQue from "./FreelyAskedQue.js";
 
 export default function Login() {
   return (

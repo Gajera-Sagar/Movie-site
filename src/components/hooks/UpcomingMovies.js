@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
-import { Authentication } from '../utils/CenterData';
-import { Axios } from '../Axios/Axios';
+import { Authentication } from '../utils/CenterData.js';
+import { Axios } from '../Axios/Axios.js';
 import { useDispatch } from 'react-redux';
-import { UpComingMovies } from '../StoreSlices/PopularMovies';
+import { UpComingMovies } from '../StoreSlices/PopularMovies.js';
 
 function UpcomingMovies() {
   const dispatch =  useDispatch()
