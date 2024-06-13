@@ -16,7 +16,7 @@ function MovieTrailet() {
     return () => {
       clearInterval(intervalId);
     };
-  }, [slider]);
+  }, [movies, slider ]);
 
   useEffect(() => {
     if (movies?.length > 0) {
@@ -26,7 +26,7 @@ function MovieTrailet() {
         .then((response) => setTrailer(response))
         .catch((err) => console.error(err));
     }
-  }, [slider]);
+  }, [slider, movies]);
 
   const currentMovie = movies[slider] || {};
   const { title, overview } = currentMovie;

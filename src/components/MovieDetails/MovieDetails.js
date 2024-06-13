@@ -23,7 +23,7 @@ function MovieDetails() {
       })
 
       .catch((err) => console.error(err));
-  }, []);
+  }, [movieID]);
 
   return (
     <div>
