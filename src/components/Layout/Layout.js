@@ -13,15 +13,15 @@ import { onAuthStateChanged } from "firebase/auth";
 import { Auth } from "../Firebase/Firebase.js";
 
 function Layout() {
-  // const [user, setUser] = useState();
+  const [user, setUser] = useState();
 
   let tocon = localStorage.getItem("accessTocon");
   useEffect(() => {
-    const unsuscribe = onAuthStateChanged(Auth, () => {
-      // setUser(user);
+    const unsuscribe = onAuthStateChanged(Auth, (user) => {
+      setUser(user);
     });
     return () => unsuscribe();
-  }, []);
+  }, [user]);
 
   const layout = createBrowserRouter([
     {
