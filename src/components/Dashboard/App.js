@@ -10,10 +10,12 @@ import BackAndSignOutHeader from "../BackAndSignOutHeader.js/BackAndSignOutHeade
 import DashboardShimmerEffect from "../ShimmerEffect/DashboardShimmerEffect.js";
 import UpcomingMovies from "../hooks/UpcomingMovies.js";
 import SearchMovies from "../hooks/SearchMovie.js";
+import { useLocation } from "react-router-dom";
 
 function App() {
   const [nowPlaying, setNowPlaying] = useState(null);
   const dispatch = useDispatch();
+ const {pathname} = useLocation()
 
   useEffect(() => {
     fetch(Movie_url + "now_playing", Authentication)
@@ -36,7 +38,7 @@ function App() {
     <>
       {nowPlaying ? (
         <>
-          <BackAndSignOutHeader />
+          <BackAndSignOutHeader pathname= {pathname} />
           <div className="flex  bg-black flex-col items-start">
             <MovieTrailet />
           </div>

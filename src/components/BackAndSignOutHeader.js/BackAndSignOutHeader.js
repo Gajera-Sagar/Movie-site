@@ -1,14 +1,16 @@
 import { signOut } from "firebase/auth";
 import React from "react";
 import { Auth } from "../Firebase/Firebase.js";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function BackAndSignOutHeader({ trailer }) {
+function BackAndSignOutHeader({ trailer, pathname }) {
+
+  const navigate = useNavigate()
   const handleSignOut = async () => {
     try {
       await signOut(Auth).then(() => {
         localStorage.removeItem("accessTocon");
-        Navigate("/");
+        navigate("/signin");
       });
     } catch (error) {
       console.log(error);
@@ -17,18 +19,18 @@ function BackAndSignOutHeader({ trailer }) {
 
   return (
     <div
-      className={`flex justify-between  items-center  sticky top-0 z-30 ${
-        trailer ? "bg-[#EEEEEE] px-20" : "bg-black px-12"
+      className={`flex   items-center  sticky top-0 z-30 ${
+        trailer ? "bg-[#EEEEEE] px-20  justify-between" : "bg-black px-12 justify-end"
       }`}
     >
-      <button
+      {pathname !== "/dashboard"?<button
         onClick={() => window.history.back()}
         type="button"
         className="py-3 px-6 bg-gradient-to-r from-[#395790] to-[#182657]  text-white flex justify-center items-center bg-slate-300 rounded-3xl z-30"
       >
         GO BACK
         <i className="fa-solid fa-backward ms-4"></i>
-      </button>
+      </button>:""}
       <button
         className="z-30 text-white px-5 py-3  rounded-3xl bg-gradient-to-r from-[#EA5B67] to-[#F1A180] flex justify-center items-center m-3"
         onClick={handleSignOut}
