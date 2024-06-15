@@ -15,7 +15,7 @@ function RelatedMovies() {
   console.log(searchMovies);
   return (
    <>
-   <BackAndSignOutHeader/>
+   <BackAndSignOutHeader/>  
     <div className="px-20 flex bg-black flex-wrap justify-around gap-5">
       {searchMovies?.map((movie) => {
         return <MovieCard movie={movie} title={movie.title} />;
