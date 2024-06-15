@@ -25,6 +25,8 @@ function MovieDetails() {
       .catch((err) => console.error(err));
   }, [movieID]);
 
+console.log(trailer?.length)
+
   return (
     <div>
       {movieDetail === null ? (
@@ -35,8 +37,8 @@ function MovieDetails() {
           <div className="bg-[#EEEEEE]  text-[#373A40]   sm:px-20 px-10 pb-9">
          
             <div className="">
+                {trailer?.length > 0 && (
               <div className="flex gap-5 border-2 p-4 w-full">
-                {trailer && (
                   <div className=" w-full border-2  rounded-xl overflow-hidden ">
                     <iframe
                       className=" w-full aspect-video"
@@ -48,8 +50,8 @@ function MovieDetails() {
                       allowfullscreen
                     ></iframe>
                   </div>
-                )}
               </div>
+                )}
 
               <div className="border-2 p-4 flex">
                 <div className="w-3/12 rounded-xl border-2 overflow-hidden">
@@ -160,7 +162,7 @@ function MovieDetails() {
               </div>
             </div>
             <div>
-              <div className="flex border-2 p-4 w-full box-border flex-wrap justify-start">
+             {trailer?.length>0 && <div className="flex border-2 p-4 w-full box-border flex-wrap justify-start">
                 <h1 className="w-full text-3xl font-bold mb-3">Videos </h1>
                 {trailer &&
                   trailer?.map((trailer) => {
@@ -180,7 +182,7 @@ function MovieDetails() {
                       </div>
                     );
                   })}
-              </div>
+              </div>}
             </div>
           </div>
         </>

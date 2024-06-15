@@ -9,7 +9,7 @@ import TopRatedMovies from "../hooks/TopRatedMovies.js";
 import BackAndSignOutHeader from "../BackAndSignOutHeader.js/BackAndSignOutHeader.js";
 import DashboardShimmerEffect from "../ShimmerEffect/DashboardShimmerEffect.js";
 import UpcomingMovies from "../hooks/UpcomingMovies.js";
-import SearchMovies from "../hooks/SearchMovie.js";
+import SearchMovies from "../hooks/useSearchMovie.js";
 import { useLocation } from "react-router-dom";
 
 function App() {
@@ -32,7 +32,6 @@ function App() {
   PopularMoviesData();
   TopRatedMovies();
   UpcomingMovies();
-  SearchMovies()
 
   return (
     <>

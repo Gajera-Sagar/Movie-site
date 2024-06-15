@@ -11,6 +11,7 @@ import MovieDetails from "../MovieDetails/MovieDetails.js";
 import LoginPassword from "../LoginPassword page/LoginPassword.js";
 import { onAuthStateChanged } from "firebase/auth";
 import { Auth } from "../Firebase/Firebase.js";
+import RelatedMovies from "../RelatedMovies/RelatedMovies.js";
 
 function Layout() {
   const [user, setUser] = useState();
@@ -35,6 +36,10 @@ function Layout() {
     {
       path: "/dashboard",
       element: tocon ? <App /> : <Navigate to={"/"} />,
+    },
+    {
+      path: "/dashboard/:moviename",
+      element: <RelatedMovies/>,
     },
     {
       path: "/dashboard/:typeofMovie/:movieID",

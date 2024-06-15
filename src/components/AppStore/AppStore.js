@@ -3,6 +3,8 @@ import NowPlayingMovies from "../StoreSlices/NowPlayingMovies.js";
 import popularMovies from "../StoreSlices/PopularMovies.js";
 import TopRatedMovies from "../StoreSlices/TopRatedMovies.js";
 import EmailPassword from "../StoreSlices/EmailPassword.js";
+import SearchMovies from "../StoreSlices/SearchRElatedMoviesSlice.js";
+
 
 const AppStore = configureStore({
   reducer: {
@@ -10,6 +12,8 @@ const AppStore = configureStore({
     popular: popularMovies,
     TopMovies: TopRatedMovies,
     Auth: EmailPassword,
+    searchMovies : SearchMovies,
+    
   },
 });
 
