@@ -21,25 +21,6 @@ const LoginHeader = ({ signin }) => {
         />
       </div>
       <div className="flex gap-4">
-        {/* <div className="flex items-center h-full gap-2  px-3 py-1.5 border-2 rounded-lg">
-          <img
-            className="h-full"
-            src="/images/language.svg"
-            alt="Language icon"
-          />
-          <select
-            className="bg-transparent text-white"
-            name="language"
-            id="language"
-          >
-            <option className="text-black" value="English">
-              English
-            </option>
-            <option className="text-black" value="हिंदी">
-              हिंदी
-            </option>
-          </select>
-        </div> */}
 
         <button
           className="font-bold text-sm m-1 text-white px-6  py-3 rounded-lg bg-red-600"
