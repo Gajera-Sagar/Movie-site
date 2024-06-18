@@ -4,7 +4,7 @@ import SignInFormField from "../SignInForm/SignInFormField.js";
 export default function LoginInput({ signin }) {
   return (
     <div
-      className=" h-[120vh] relative"
+      className=" h-screen relative"
       style={{ backgroundImage: `url('./images/backgroundImage.jpg')` }}
     >
       <div

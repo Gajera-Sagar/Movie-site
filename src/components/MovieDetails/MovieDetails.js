@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Authentication, Image_Path, Movie_url } from "../utils/CenterData.js";
-import BackAndSignOutHeader from "../BackAndSignOutHeader.js/BackAndSignOutHeader.js";
+import BackAndSignOutHeader from "../BackAndSignOutHeader/BackAndSignOutHeader.js";
 import ShimmerEffectForMovieDetails from "../ShimmerEffect/ShimmerEffectForMovieDetails.js";
 
 function MovieDetails() {
@@ -25,16 +25,15 @@ function MovieDetails() {
       .catch((err) => console.error(err));
   }, [movieID]);
 
-console.log(trailer?.length)
 
   return (
-    <div>
+    <div className="bg-[#EEEEEE] h-screen">
       {movieDetail === null ? (
         <ShimmerEffectForMovieDetails/>
       ) : (
         <>
           <BackAndSignOutHeader trailer={trailer} />
-          <div className="bg-[#EEEEEE]  text-[#373A40]   sm:px-20 px-10 pb-9">
+          <div className="bg-[#EEEEEE]  text-[#373A40]   sm:px-20 px-7 pb-9">
          
             <div className="">
                 {trailer?.length > 0 && (
@@ -53,39 +52,44 @@ console.log(trailer?.length)
               </div>
                 )}
 
-              <div className="border-2 p-4 flex">
-                <div className="w-3/12 rounded-xl border-2 overflow-hidden">
-                  <img
-                    className="h-full w-full object-center  object-cover"
+              <div className="border-2 p-4 flex flex-col md:flex-row">
+                <div className="md:w-4/12 my-auto w-full h-60 md:h-80  flex justify-center items-center">
+              { movieDetail?.poster_path?<img
+                    className="h-full p-3 my-auto w-full object-center  object-contain"
                     src={`${Image_Path}${movieDetail.poster_path}`}
                     alt=""
-                  />
+                  />:
+                  <img
+           className="h-full p-3 my-auto w-full object-center object-cover"
+            src="/images/dummyposter.jpg"
+            alt="Movie Card"
+          />}
                 </div>
-                <div className="w-9/12 ms-4">
+                <div className="md:w-8/12 w-full md:ms-4">
                   <div>
-                    <div className=" px-4 ">
-                      <h1 className="text-5xl font-bold">
-                        {movieDetail.title}
+                    <div className="px-4 mt-3 md:mt-0">
+                      <h1 className="md:text-5xl text-2xl font-bold">
+                        {movieDetail?.title}
                       </h1>
                     </div>
-                    <div className=" flex justify-between px-4">
+                    <div className=" flex flex-col  justify-between px-4">
                       <div>
                         <h6 className=" font-semibold  my-1.5 text-[18px] ">
-                          {movieDetail.tagline}
+                          {movieDetail?.tagline}
                         </h6>
                         <h6 className=" font-semibold  my-1.5 text-[15px]">
-                          {movieDetail.release_date.slice(0, 4) +
+                          {movieDetail?.release_date.slice(0, 4) +
                             " - " +
-                            Math.floor(movieDetail.runtime / 60) +
+                            Math.floor(movieDetail?.runtime / 60) +
                             "hr " +
-                            (movieDetail.runtime % 60) +
+                            (movieDetail?.runtime % 60) +
                             "mins"}
                         </h6>
-                        <div className="my-3 -mx-1">
-                          {movieDetail.genres.map((genre) => {
+                        <div className="my-3 -mx-1 flex flex-wrap">
+                          {movieDetail?.genres.map((genre) => {
                             return (
-                              <span className="border border-gray-500 px-2  py-1 text-[15px]  mx-1 text-gray-700 rounded-full ">
-                                {genre.name}
+                              <span className="border border-gray-500 px-2 my-1 py-1 text-[15px]  mx-1 text-gray-700 rounded-full ">
+                                {genre?.name}
                               </span>
                             );
                           })}
@@ -94,25 +98,29 @@ console.log(trailer?.length)
                       <div className="flex gap-8">
                         <h6 className="mt-2 font-semibold">
                           <i className="fa-solid fa-star text-yellow-600 me-1"></i>{" "}
-                          {movieDetail.vote_average}
+                          {movieDetail?.vote_average}
                         </h6>
 
                         <h6 className="mt-2 font-semibold">
                           {" "}
                           <i class="fa-solid fa-check-to-slot me-2 text-blue-700"></i>
-                          {movieDetail.vote_count}
+                          {movieDetail?.vote_count}
                         </h6>
 
                         <h6 className="mt-2 font-semibold ">
                           <i class="fa-solid fa-fire me-2 text-green-800"></i>
-                          {movieDetail.popularity}
+                          {movieDetail?.popularity}
                         </h6>
                       </div>
                     </div>
-                    <div className=" mt-2 px-3">
+                  
+                  </div>
+                </div>
+              </div>
+              <div className=" border-2 px-3 ">
                       <div className="">
                         <p className="leading-6   my-3 ">
-                          {movieDetail.overview}
+                          {movieDetail?.overview}
                         </p>
                         <div>
                           <div className="text-blue-700">
@@ -120,14 +128,14 @@ console.log(trailer?.length)
                               Budget:{" "}
                             </span>
                             <i className="fa-solid fa-dollar-sign me-1"></i>
-                            {movieDetail.budget / 1000000} Million
+                            {movieDetail?.budget / 1000000} Million
                           </div>
                           <div className="text-blue-700">
                             <span className="me-1 text-[#686D76] font-bold">
                               Box office:{" "}
                             </span>
                             <i className="fa-solid fa-dollar-sign me-1 "></i>
-                            {movieDetail.revenue / 1000000} Million
+                            {movieDetail?.revenue / 1000000} Million
                           </div>
                         </div>
                       </div>
@@ -157,9 +165,6 @@ console.log(trailer?.length)
                         })}
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
             </div>
             <div>
              {trailer?.length>0 && <div className="flex border-2 p-4 w-full box-border flex-wrap justify-start">
@@ -167,7 +172,7 @@ console.log(trailer?.length)
                 {trailer &&
                   trailer?.map((trailer) => {
                     return (
-                      <div className="p-4  w-4/12  flex-shrink-0 ">
+                      <div className="p-4  w-full sm:w-6/12 lg:w-4/12   flex-shrink-0 ">
                         <div className="rounded-xl overflow-hidden ">
                           <iframe
                             className=" w-full aspect-video"

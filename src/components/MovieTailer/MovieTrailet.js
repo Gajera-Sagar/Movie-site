@@ -34,21 +34,7 @@ function MovieTrailet() {
   return (
    
     <>
-      <div className="w-full max-w-screen-2xl mx-auto  aspect-[16/7] z-10 bg-gradient-to-r from-black p-20 text-white absolute ">
-        <div className="w-4/12 absolute bottom-16">
-          <h1 className="text-5xl font-bold my-4">{title ? title : ""}</h1>
-          <div className="flex">
-            <button className=" my-5 me-4 py-1.5 px-5 rounded-md bg-gray-500 bg-opacity-35 flex items-center">
-              <i className="fa-solid fa-play me-3"></i> Play
-            </button>
-            <button className=" my-5 me-4 py-1.5 px-5 rounded-md bg-gray-500 bg-opacity-35 flex items-center">
-              <i className="fa-solid fa-plus me-3"></i>My List
-            </button>
-          </div>
-          <p className="line-clamp-3">{overview || ""}</p>
-        </div>
-      </div>
-      <iframe
+    <iframe
         className=" w-full aspect-[16/7] max-w-screen-2xl"
         src={`https://www.youtube.com/embed/${trailer?.results[0]?.key}?autoplay=1&playlist=${trailer?.results[0]?.key}&&loop=1&mute=1&controls=0`}
         frameborder="0"
@@ -57,6 +43,21 @@ function MovieTrailet() {
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
       ></iframe>
+      <div className="w-full max-w-screen-2xl mx-auto  aspect-[16/7] z-10 bg-gradient-to-r from-black md:p-14 lg:p-20 px-10 py-3 text-white md:absolute ">
+        <div className="md:w-4/12 w-full md:absolute bottom-16">
+          <h1 className="text-5xl font-bold md:my-4 my-2">{title ? title : ""}</h1>
+          <div className="flex">
+            <button className=" my-5 me-4 py-1.5 px-5 rounded-md bg-gray-500 bg-opacity-35 flex items-center">
+              <i className="fa-solid fa-play me-3"></i> Play
+            </button>
+            <button className=" my-5 me-4 py-1.5 px-5 rounded-md bg-gray-500 bg-opacity-35 flex items-center">
+              <i className="fa-solid fa-plus me-3"></i>My List
+            </button>
+          </div>
+          <p className="md:line-clamp-4">{overview || ""}</p>
+        </div>
+      </div>
+      
     </>
   );
 }

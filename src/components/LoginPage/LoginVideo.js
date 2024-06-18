@@ -4,9 +4,9 @@ export default function LoginVideo({ srcImg, srcVideo, loading }) {
 
   return (
     <>
-      <div className="w-6/12 h-full relative ">
+      <div className="sm:w-6/12 w-full  mb-7 sm:h-full px-3 py-8 sm:flex justify-center relative ">
         {srcVideo && (
-          <div className="w-full h-full p-[13%] flex items-center justify-center">
+          <div className=" h-full sm:p-[13%] flex items-center justify-center">
             <video
               className=" w-full h-auto"
               src={srcVideo}
@@ -17,12 +17,12 @@ export default function LoginVideo({ srcImg, srcVideo, loading }) {
           </div>
         )}
 
-        <div className="absolute w-full h-full top-0 flex justify-center items-center flex-col ">
+        <div className={`${srcVideo?"absolute":""} h-full top-0 flex justify-center items-center flex-col `}>
           <div className="w-full">
             <img className="" src={srcImg} alt="TvImage" />
           </div>
           {loading && (
-            <div className="w-7/12 mx-auto h-24 absolute border-2 justify-around items-center border-gray-500 bg-black bottom-[15%] rounded-xl p-3 flex">
+            <div className="sm:w-7/12 w-8/12 mx-auto sm:h-24 h-20 absolute border-2 justify-around items-center border-gray-500 bg-black sm:bottom-[15%] bottom-0 rounded-xl p-3 flex">
               <div className="h-full">
                 <img
                   className="h-full w-auto"

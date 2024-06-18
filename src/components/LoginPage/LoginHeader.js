@@ -21,7 +21,7 @@ const LoginHeader = ({ signin }) => {
         />
       </div>
       <div className="flex gap-4">
-        <div className="flex items-center h-full gap-2  px-3 py-1.5 border-2 rounded-lg">
+        {/* <div className="flex items-center h-full gap-2  px-3 py-1.5 border-2 rounded-lg">
           <img
             className="h-full"
             src="/images/language.svg"
@@ -39,10 +39,10 @@ const LoginHeader = ({ signin }) => {
               हिंदी
             </option>
           </select>
-        </div>
+        </div> */}
 
         <button
-          className="font-bold text-sm m-1 text-white px-4  py-1 rounded-lg bg-red-600"
+          className="font-bold text-sm m-1 text-white px-6  py-3 rounded-lg bg-red-600"
           onClick={signin ? handleNavigateForSinin : handleNavigateForSinup}
         >
           {signin ? "sign up" : "sign in "}

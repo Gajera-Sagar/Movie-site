@@ -6,10 +6,9 @@ import { NowPlayingMovie } from "../StoreSlices/NowPlayingMovies.js";
 import PopularMoviesData from "../hooks/PopularMoviesData.js";
 import MovieContainer from "../MovieContainer/MovieContainer.js";
 import TopRatedMovies from "../hooks/TopRatedMovies.js";
-import BackAndSignOutHeader from "../BackAndSignOutHeader.js/BackAndSignOutHeader.js";
+import BackAndSignOutHeader from "../BackAndSignOutHeader/BackAndSignOutHeader.js";
 import DashboardShimmerEffect from "../ShimmerEffect/DashboardShimmerEffect.js";
 import UpcomingMovies from "../hooks/UpcomingMovies.js";
-import SearchMovies from "../hooks/useSearchMovie.js";
 import { useLocation } from "react-router-dom";
 
 function App() {
@@ -35,10 +34,10 @@ function App() {
 
   return (
     <>
-      {nowPlaying ? (
+      {nowPlaying  ? (
         <>
           <BackAndSignOutHeader pathname= {pathname} />
-          <div className="flex  bg-black flex-col items-start">
+          <div className="flex  bg-black flex-col items-center">
             <MovieTrailet />
           </div>
           <MovieContainer />

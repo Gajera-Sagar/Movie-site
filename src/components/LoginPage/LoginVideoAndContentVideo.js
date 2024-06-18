@@ -1,10 +1,11 @@
 import React from "react";
 
 export default function LoginVideoAndContentVideo({children }) {
+  console.log(children)
   return (
     <>
-      <div className="h-[500px] flex items-center bg-black ">
-        <div className=" px-[10%] h-full flex items-center text-white w-full">
+      <div className="sm:h-[500px]  items-center bg-black ">
+        <div className=" sm:marker:px-[10%] py-8 sm:h-full sm:flex flex-col sm:flex-row items-center text-white w-full">
           {children}
         </div>
       </div>

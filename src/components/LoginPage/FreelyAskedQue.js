@@ -8,15 +8,15 @@ export default function FreelyAskedQue() {
   }
   return (
     <>
-      <div className="bg-black px-[10%] py-16 text-white">
-        <h1 className="text-5xl font-bold mb-5 leading-[3.5rem] text-center pb-6">
+      <div className="bg-black sm:px-[10%] px-5 py-16 text-white">
+        <h1 className="sm:text-5xl text-3xl font-bold mb-5 sm:leading-[3.5rem] leading-10 text-center pb-6">
           Frequently Asked Questions
         </h1>
         {Questions.map((question, i) => {
           return (
-            <div className="mx-10" onClick={() => collapse(i)}>
-              <div className="p-7 bg-gray-800 border-black border mt-2.5 flex justify-between items-center">
-                <h1 className="text-2xl">{question.question}</h1>
+            <div className="sm:mx-10" onClick={() => collapse(i)}>
+              <div className="sm:p-7 p-5 bg-gray-800 border-black border mt-2.5 flex justify-between items-center">
+                <h1 className="sm:text-2xl text-xl ">{question.question}</h1>
                 <img
                   className={`${i === index ? "rotate-45" : ""}`}
                   src="./images/plus.svg"

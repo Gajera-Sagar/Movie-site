@@ -13,15 +13,6 @@ export default function Login() {
       <LoginInput />
       <GrayLine />
       <LoginVideoAndContentVideo>
-        <LoginTopic
-          title="Enjoy on your TV"
-          description=" Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray
-        players and more."
-        />
-        <LoginVideo srcImg="./images/tv.png" srcVideo="./videos/videoTv.m4v" />
-      </LoginVideoAndContentVideo>
-      <GrayLine />
-      <LoginVideoAndContentVideo>
         <LoginVideo srcImg="images/mobile-photo.jpg" loading />
 
         <LoginTopic
@@ -30,7 +21,17 @@ export default function Login() {
         />
       </LoginVideoAndContentVideo>
       <GrayLine />
+      
       <LoginVideoAndContentVideo>
+        <LoginTopic
+          title="Enjoy on your TV"
+          description=" Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray
+        players and more."
+        />
+        <LoginVideo srcImg="./images/tv.png" srcVideo="./videos/videoTv.m4v" />
+      </LoginVideoAndContentVideo>
+      <GrayLine />
+      {/* <LoginVideoAndContentVideo>
         <LoginTopic
           title="Watch everywhere"
           description="Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV."
@@ -39,7 +40,7 @@ export default function Login() {
           srcImg="images/device-pile-in.png"
           srcVideo="videos/video-devices-in.m4v"
         />
-      </LoginVideoAndContentVideo>
+      </LoginVideoAndContentVideo> */}
       <GrayLine />
       <LoginVideoAndContentVideo>
         <LoginVideo srcImg="./images/cartoon-image.png" />
